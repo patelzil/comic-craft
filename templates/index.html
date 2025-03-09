@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Comic Strip Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Comic Strip Generator</h1>
+            <p class="tagline">Turn your ideas into comic strips in seconds!</p>
+        </header>
+
+        <section id="idea-input" class="card">
+            <h2>Start Your Comic Adventure</h2>
+            <div class="input-group">
+                <label for="initial-idea">Enter your comic idea:</label>
+                <textarea id="initial-idea" placeholder="e.g., A time-traveling cat in a cyberpunk city" rows="3"></textarea>
+                <button id="generate-btn" class="primary-btn">Generate Comic</button>
+            </div>
+        </section>
+
+        <section id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Creating your comic masterpiece...</p>
+        </section>
+
+        <section id="comic-display" class="hidden">
+            <h2>Your Comic Strip</h2>
+            <div class="comic-container">
+                <div id="comic-panels"></div>
+                
+                <div id="continuation-section">
+                    <div class="card">
+                        <h3>What happens next?</h3>
+                        <textarea id="continuation-idea" placeholder="Describe what you want to happen next..." rows="4"></textarea>
+                        <button id="continue-btn" class="primary-btn">Continue the Story</button>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="download-btn" class="secondary-btn">Download Comic</button>
+                        <button id="new-comic-btn" class="secondary-btn">Create New Comic</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="error-display" class="hidden">
+            <div class="error-message">
+                <h3>Oops! Something went wrong</h3>
+                <p id="error-text"></p>
+                <button id="try-again-btn" class="primary-btn">Try Again</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 </p>
+        <p class="small">Powered by AI.</p>
+    </footer>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

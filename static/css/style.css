@@ -1,0 +1,395 @@
+/* Base Styles */
+:root {
+    --primary-color: #ff5252;
+    --secondary-color: #4a4a4a;
+    --background-color: #f9f9f9;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+/* Card Components */
+.card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Form Elements */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+textarea {
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: 'Comic Neue', cursive;
+    font-size: 1rem;
+    resize: vertical;
+    transition: var(--transition);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #e04343;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: #e0e0e0;
+    color: var(--secondary-color);
+}
+
+.secondary-btn:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Comic Display */
+.comic-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+#comic-panels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    flex: 3;
+}
+
+#continuation-section {
+    flex: 1;
+    min-width: 250px;
+    align-self: flex-start;
+    position: sticky;
+    top: 2rem;
+}
+
+#continuation-section .card {
+    margin-bottom: 1.5rem;
+}
+
+#continuation-section .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#continuation-section .action-buttons button {
+    width: 100%;
+}
+
+.comic-panel {
+    background-color: white;
+    border: 2px solid #000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    break-inside: avoid;
+}
+
+.comic-panel:hover {
+    transform: translateY(-5px);
+}
+
+.panel-image {
+    border-bottom: 2px solid #000;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    position: relative;
+    height: 300px;
+}
+
+.panel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.panel-content {
+    padding: 15px 15px 50px 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.panel-scene {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.panel-number {
+    display: inline-block;
+    background-color: #4a6fa5;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.panel-dialogue {
+    font-family: 'Comic Neue', cursive;
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.panel-dialogue.hidden {
+    display: none;
+}
+
+.more-details-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    transition: background-color 0.3s;
+    z-index: 5;
+}
+
+.more-details-btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* Don't show the button in downloaded images */
+.for-download .more-details-btn {
+    display: none;
+}
+
+/* Always show dialogue in downloaded images */
+.for-download .panel-dialogue.hidden {
+    display: block;
+    margin-bottom: 0;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .comic-container {
+        flex-direction: column;
+    }
+    
+    #continuation-section {
+        position: static;
+        width: 100%;
+    }
+    
+    .comic-panel {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .comic-panel {
+        width: calc(50% - 0.75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .comic-panel {
+        width: calc(33.333% - 1rem);
+    }
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 82, 82, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#loading {
+    text-align: center;
+    padding: 3rem;
+}
+
+#loading p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Error Display */
+.error-message {
+    background-color: #ffebee;
+    border-left: 5px solid #f44336;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+}
+
+.error-message h3 {
+    color: #d32f2f;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    color: var(--secondary-color);
+}
+
+.small {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #comic-panels {
+        width: 100%;
+    }
+}
