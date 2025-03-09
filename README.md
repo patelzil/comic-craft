@@ -2,6 +2,8 @@
 
 An interactive web application that generates comic strips based on user ideas and allows for dynamic story continuation with AI-generated images.
 
+https://github.com/user-attachments/assets/f3f6f0d2-753c-4cb8-9120-b26e0871bb51
+
 ## Features
 
 - Generate comic strips from a text prompt using GPT-4 for text generation
