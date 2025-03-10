@@ -44,8 +44,8 @@ Before setting up this project, consider:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/patelzil/comic_craft.git
-   cd comic_craft
+   git clone https://github.com/patelzil/comic-craft.git
+   cd comic-craft
    ```
 
 2. Install dependencies:
